@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated videos
+static/*.mp4
+static/*.avi
+static/*.mov
+static/*.webm
+
+# Model cache
+huggingface/ 
