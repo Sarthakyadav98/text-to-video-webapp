@@ -1,54 +1,164 @@
 body {
-    background: #f0f2f5;
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f2f5 100%);
+    color: #222;
+    display: flex;
+    flex-direction: column;
 }
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+header {
+    background: #4f8cff;
+    color: #fff;
+    padding: 32px 0 16px 0;
+    box-shadow: 0 2px 8px rgba(79,140,255,0.08);
     text-align: center;
 }
-h1 {
-    margin-bottom: 24px;
-    color: #333;
-}
-form {
+.header-content {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 }
-input[type="text"] {
+.logo {
+    width: 48px;
+    height: 48px;
+}
+.subtitle {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: #e0e7ff;
+}
+main {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 32px 8px 16px 8px;
+}
+.form-section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(79,140,255,0.10);
+    padding: 32px 32px 24px 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+.form-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+#prompt {
+    width: 80%;
+    padding: 12px;
+    border: 1.5px solid #b6c6e3;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    transition: border 0.2s;
+}
+#prompt:focus {
+    border: 1.5px solid #4f8cff;
+    outline: none;
 }
 button {
-    padding: 10px 20px;
-    background: #007bff;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #4f8cff 60%, #6ee7b7 100%);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(79,140,255,0.10);
+    transition: background 0.2s, transform 0.1s;
 }
-button:hover {
-    background: #0056b3;
+button:hover, button:focus {
+    background: linear-gradient(90deg, #2563eb 60%, #10b981 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+#loading {
+    color: #4f8cff;
+    margin-top: 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.video-section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #resultVideo {
     width: 100%;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    min-height: 240px;
+    background: #e0e7ff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+    margin-top: 12px;
 }
-#loading {
-    color: #007bff;
-    margin-top: 20px;
+.tips-section {
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(79,140,255,0.06);
+    padding: 24px 32px;
+    max-width: 480px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+.tips-section h2 {
+    margin-top: 0;
+    color: #4f8cff;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+.tips-section ul {
+    padding-left: 20px;
+    margin: 0;
+}
+.tips-section li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #2563eb;
+}
+footer {
+    background: #e0e7ff;
+    color: #4f8cff;
+    text-align: center;
+    padding: 18px 0 12px 0;
+    font-size: 1rem;
+    border-top: 1px solid #b6c6e3;
+}
+footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .form-section, .tips-section, .video-section {
+        max-width: 98vw;
+        padding: 16px 4vw;
+    }
+    main {
+        padding: 16px 2vw 8px 2vw;
+    }
+    .header-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
 } 

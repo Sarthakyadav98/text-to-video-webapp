@@ -7,15 +7,38 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Text-to-Video Generator</h1>
-        <form id="promptForm">
-            <input type="text" id="prompt" name="prompt" placeholder="Enter your prompt..." required>
-            <button type="submit">Generate Video</button>
-        </form>
-        <div id="loading" style="display:none;">Generating video, please wait...</div>
-        <video id="resultVideo" controls style="display:none;"></video>
-    </div>
+    <header>
+        <div class="header-content">
+            <img src="https://em-content.zobj.net/source/microsoft-teams/363/movie-camera_1f3a5.png" alt="Movie Camera" class="logo">
+            <h1>Text-to-Video Generator</h1>
+        </div>
+        <p class="subtitle">Turn your imagination into video clips using AI diffusion models!</p>
+    </header>
+    <main>
+        <section class="form-section">
+            <form id="promptForm">
+                <label for="prompt">Enter your prompt:</label>
+                <input type="text" id="prompt" name="prompt" placeholder="e.g. A bear is dancing in the forest" required>
+                <button type="submit">Generate Video</button>
+            </form>
+            <div id="loading" style="display:none;">Generating video, please wait...</div>
+        </section>
+        <section class="video-section">
+            <video id="resultVideo" controls style="display:none;"></video>
+        </section>
+        <section class="tips-section">
+            <h2>Tips & Example Prompts</h2>
+            <ul>
+                <li>"A cat playing piano in a jazz bar"</li>
+                <li>"A futuristic city at sunset, flying cars everywhere"</li>
+                <li>"A robot painting a landscape on canvas"</li>
+                <li>"A dragon flying over snowy mountains"</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Made with <span aria-label="love">❤️</span> using <a href="https://huggingface.co/ali-vilab/text-to-video-ms-1.7b" target="_blank">Text-to-Video MS-1.7B</a> | <a href="https://github.com/Sarthakyadav98/text-to-video-webapp" target="_blank">GitHub</a></p>
+    </footer>
     <script src="/static/script.js"></script>
 </body>
 </html> 
